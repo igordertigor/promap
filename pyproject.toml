@@ -27,3 +27,9 @@ promap = "promap.main:app"
 version_scheme = "post-release"
 local_scheme = "no-local-version"
 tag_regex = "^(?P<prefix>v?)(?P<version>\\d+\\.\\d+\\.\\d+)"
+
+[tool.setuptools.package-data]
+"promap" = ["py.typed"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -17,5 +17,6 @@ def asdot(filename: str, outfile: str, exclude: list[str] = [Status.done]):
     with open(outfile, 'wb') as f:
         f.write(t.pipe(format='pdf'))
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     app()
