@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.blue]
+
+[project]
+name = "promap"
+authors = [
+  {name = "Ingo Fruend", email = "github@ingofruend.net"},
+]
+description = "Task trees"
+readme = "README.md"
+license = {text = "BSD-3-Clause"}
+dynamic = ["version"]
+dependencies = [
+  "typer",
+  "pydantic",
+  "pyyaml",
+  "graphviz",
+]
+
+[project.scripts]
+promap = "promap.main:app"
+
+[tool.setuptools_scm]
+version_scheme = "post-release"
+local_scheme = "no-local-version"
+tag_regex = "^(?P<prefix>v?)(?P<version>\\d+\\.\\d+\\.\\d+)"
