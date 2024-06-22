@@ -30,6 +30,10 @@ def clean(filename: str, donefile: str = '', exclude: list[str] = [Status.done],
             drop.append(task)
         else:
             keep.append(task)
+    dropped_keys = [t.key for t in drop]
+    for task in keep:
+        task.dep =  [d for d in task.dep if d not in dropped_keys]
+        task.weak = [d for d in task.weak if d not in dropped_keys]
     config.tasks = keep
 
     tasks_out = io.StringIO()
