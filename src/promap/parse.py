@@ -1,8 +1,8 @@
 from yaml import safe_load
 
-from .models import Task, ConfigSchema
+from .models import ConfigSchema
 
 
-def parse(filename: str) -> list[Task]:
+def parse(filename: str) -> ConfigSchema:
     with open(filename) as f:
-        return ConfigSchema(**safe_load(f)).tasks
+        return ConfigSchema(**safe_load(f))
