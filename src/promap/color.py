@@ -18,9 +18,9 @@ Color = Annotated[str, AfterValidator(is_color)]
 def get_color(s: Status) -> Color:
     colors = {
         Status.default: '#ffeebb',
-        Status.focus: '#ffffee',
+        Status.focus: '#aaccff',
         Status.postponed: '#eeeeee',
         Status.current_milestone: '#ffaaaa',
-        Status.started: '#aaffcc',
+        Status.started: '#ffffee',
     }
     return colors.get(s, colors[Status.default])
