@@ -13,7 +13,7 @@ app = typer.Typer(name='promap')
 
 
 @app.command()
-def asdot(filename: str, outfile: str, exclude: list[str] = [Status.done]):
+def asdot(filename: str, outfile: str, exclude: list[str] = [Status.done, Status.wontdo]):
     nodes = parse(filename).tasks
     nodes = filter_by_status(nodes, exclude=set(exclude))
     t = build_tree(nodes)
@@ -22,7 +22,7 @@ def asdot(filename: str, outfile: str, exclude: list[str] = [Status.done]):
 
 
 @app.command()
-def clean(filename: str, donefile: str = '', exclude: list[str] = [Status.done], dryrun: bool = False):
+def clean(filename: str, donefile: str = '', exclude: list[str] = [Status.done, Status.wontdo], dryrun: bool = False):
     config = parse(filename)
     keep, drop = [], []
     for task in config.tasks:

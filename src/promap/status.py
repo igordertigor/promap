@@ -9,4 +9,5 @@ class Status(str, Enum):
     default = 'default'
     done = 'done'
     postponed = 'postponed'
+    wontdo = 'wontdo'
 
