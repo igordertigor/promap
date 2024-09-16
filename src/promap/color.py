@@ -22,5 +22,6 @@ def get_color(s: Status) -> Color:
         Status.postponed: '#eeeeee',
         Status.current_milestone: '#ffaaaa',
         Status.started: '#ffffee',
+        Status.done: '#dedede',
     }
     return colors.get(s, colors[Status.default])

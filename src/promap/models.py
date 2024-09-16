@@ -34,6 +34,7 @@ class Task(BaseModel):
             'shape': 'box',
             'style': 'filled',
             'fillcolor': get_color(self.status),
+            'fontcolor': '#aaaaaa' if self.status == Status.done else 'black',
         }
         return out
 
